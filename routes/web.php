@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [ProductsController::class, 'index'])->name('products.index');
+Route::redirect('/', 'products');
+Route::resource('products', ProductController::class);
